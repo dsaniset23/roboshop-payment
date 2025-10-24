@@ -1,5 +1,5 @@
 FROM        redhat/ubi9
-RUN         dnf install python3 gcc python3-devel -y
+RUN         dnf install python3 gcc python3-devel -y && dnf clean all
 WORKDIR     /app
 RUN         useradd -d /app roboshop && chown roboshop:roboshop /app
 COPY        . /app
